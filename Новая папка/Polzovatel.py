@@ -15,7 +15,7 @@ class Polzovatel(DBEntity):
         if len(username) >= 5:
             self._username = username
         else:
-            raise ValueError("Имяvдолжно содержать не менее 5 символов")
+            raise ValueError("Имя должно быть")
 
 
     @property
@@ -26,7 +26,7 @@ class Polzovatel(DBEntity):
         if len(password) >= 8:
             self._password = password
         else:
-            raise ValueError("Пароль должен содержать не менее 8 символов")
+            raise ValueError("Пароль должен быть")
 
     def save_to_db(self):
         try:
