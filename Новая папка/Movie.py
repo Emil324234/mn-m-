@@ -31,7 +31,7 @@ class Movie(DBEntity):
         try:
             conn = sqlite3.connect('cinema.db')
             c = conn.cursor()
-            c.execute("INSERT INTO Movies (title, duration, ticket_cost) VALUES (?, ?, ?)", (self._title, self._duration, self._ticket_cost))
+            c.execute("INSERT INTO Movies (title, duration, ticket_cost) VALUES (?, ?, ?)", (self._title, self._duration, self._ticketcost))
             conn.commit()
             conn.close()
             print("Фильм сохранен")
@@ -74,4 +74,4 @@ class Movie(DBEntity):
             print(f"Ошибка при фильтрации фильмов: {e}")
 
     def display_info(self):
-        return f"Фильм: {self._title}, Продолжительность: {self._duration}, Стоимость билета: {self._ticket_cost}"
+        return f"Фильм: {self._title}, Продолжительность: {self._duration}, Стоимость билета: {self._ticketcost}"
